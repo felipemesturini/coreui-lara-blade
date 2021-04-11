@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('home');
+//});
 
 //Route::get('/arrow', fn() => view('home'));
 
 Route::middleware('build.menu')
-    ->prefix('coreui')
+//    ->prefix('coreui')
     ->group(function () {
     Route::get('/', function () {
         return view('dashboard.homepage');
