@@ -12,9 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'register' => 'Registrar'
+    'register' => 'Registrar',
+    'login' => 'Logar',
+    'Login' => 'Logar',
+    'E-Mail Address' => 'Endereco de e-mail',
 ];

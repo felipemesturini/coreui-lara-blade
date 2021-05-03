@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class UserTableSeeder extends Seeder
@@ -15,16 +16,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
+        User::create([
+            'name' => 'Defaul User',
+            'email' => 'user@admin.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'menu_role' => 'user,admin'
+            'role_id' => DB::table('roles')->where('name', 'user')->first()->id
         ]);
-
-        $user->assignRole('admin');
-        $user->assignRole('user');
     }
 }

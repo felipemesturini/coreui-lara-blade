@@ -15,10 +15,8 @@ class TruncateTableSeeder extends Seeder
      */
     public function run()
     {
-//        DB::table('role_has_permissions')->delete();
-//        DB::table('model_has_roles')->truncate();
-        DB::table('roles')->delete();
         DB::table('users')->delete();
+        DB::table('roles')->delete();
         DB::table('menus')->delete();
     }
 }

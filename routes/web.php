@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\NotesController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,18 +11,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('home');
-//});
-
-//Route::get('/arrow', fn() => view('home'));
+Route::get('/home', function () {
+    return redirect()->route('root');
+});
 
 Route::middleware('build.menu')
 //    ->prefix('coreui')
     ->group(function () {
     Route::get('/', function () {
         return view('dashboard.homepage');
-    });
+    })->name('root');
 
     Route::get('/colors', function () {
         return view('dashboard.colors');
@@ -46,6 +40,7 @@ Route::middleware('build.menu')
     Route::get('/500', function () {
         return view('dashboard.500');
     });
+    Auth::routes();
 
     Route::prefix('base')->group(function () {
         Route::get('/breadcrumb', function () {

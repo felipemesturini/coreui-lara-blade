@@ -13,16 +13,16 @@ class CreateRoleHierarchyTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_hierarchy', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('role_id');
-            $table->unsignedBigInteger('hierarchy');
-            $table->foreign('role_id')
-                ->references('id')
-                ->on('roles')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-        });
+//        Schema::create('role_hierarchy', function (Blueprint $table) {
+//            $table->id();
+//            $table->unsignedBigInteger('role_id');
+//            $table->unsignedBigInteger('hierarchy');
+//            $table->foreign('role_id')
+//                ->references('id')
+//                ->on('roles')
+//                ->onDelete('cascade')
+//                ->onUpdate('cascade');
+//        });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateRoleHierarchyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_hierarchy');
+//        Schema::dropIfExists('role_hierarchy');
     }
 }

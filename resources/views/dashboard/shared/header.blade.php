@@ -12,8 +12,8 @@
         </button>
         <?php
             use App\MenuBuilder\FreelyPositionedMenus;
-            if(isset($appMenus['top menu'])){
-                FreelyPositionedMenus::render( $appMenus['top menu'] , 'c-header-', 'd-md-down-none');
+            if(isset($top_menu)){
+                FreelyPositionedMenus::render( $top_menu, 'c-header-', 'd-md-down-none');
             }
         ?>
 {{--        Links superiores do layout - top bar--}}

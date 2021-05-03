@@ -1,6 +1,6 @@
 <?php
 /*
-    $data = $menuel['elements']
+    $data = $menu['elements']
 */
 
 if (!function_exists('renderDropdown')) {
@@ -39,32 +39,30 @@ if (!function_exists('renderDropdown')) {
          height="46" alt="Empresa Logo">
 </div>
 
-{{--@dd($appMenus);--}}
 <ul class="c-sidebar-nav">
-    @if(isset($appMenus['LeftSidebar menu']))
-{{--        @dd($appMenus['LeftSidebar menu'])--}}
-        @foreach($appMenus['LeftSidebar menu'] as $menuel)
-            @if($menuel['slug'] === 'link')
+    @if(isset($side_menu))
+        @foreach($side_menu as $menu)
+            @if($menu['slug'] === 'link')
                 <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link" href="{{ url($menuel['href']) }}">
-                        @if($menuel['hasIcon'] === true)
-                            @if($menuel['iconType'] === 'coreui')
-                                <i class="{{ $menuel['icon'] }} c-sidebar-nav-icon"></i>
+                    <a class="c-sidebar-nav-link" href="{{ url($menu['href']) }}">
+                        @if($menu['hasIcon'] === true)
+                            @if($menu['iconType'] === 'coreui')
+                                <i class="{{ $menu['icon'] }} c-sidebar-nav-icon"></i>
                             @endif
                         @endif
-                        {{ $menuel['name'] }}
+                        {{ $menu['name'] }}
                     </a>
                 </li>
-            @elseif($menuel['slug'] === 'dropdown')
-                <?php renderDropdown($menuel) ?>
-            @elseif($menuel['slug'] === 'title')
+            @elseif($menu['slug'] === 'dropdown')
+                <?php renderDropdown($menu) ?>
+            @elseif($menu['slug'] === 'title')
                 <li class="c-sidebar-nav-title">
-                    @if($menuel['hasIcon'] === true)
-                        @if($menuel['iconType'] === 'coreui')
-                            <i class="{{ $menuel['icon'] }} c-sidebar-nav-icon"></i>
+                    @if($menu['hasIcon'] === true)
+                        @if($menu['iconType'] === 'coreui')
+                            <i class="{{ $menu['icon'] }} c-sidebar-nav-icon"></i>
                         @endif
                     @endif
-                    {{ $menuel['name'] }}
+                    {{ $menu['name'] }}
                 </li>
             @endif
         @endforeach

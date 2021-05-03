@@ -6,6 +6,6 @@ namespace App\Menus;
 
 interface MenuInterface
 {
-    public function get(string $role, int $menuId);
+    public function get(int $roleId, int $menuId);
 
 }
