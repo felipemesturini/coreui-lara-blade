@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <div class="card mx-4">
+          <div class="card mx-2">
             <div class="card-body p-4">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf

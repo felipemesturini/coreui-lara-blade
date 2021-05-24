@@ -28,6 +28,8 @@ mix.sass('resources/sass/style.scss', 'public/css');
 // general scripts
 mix.copy('node_modules/@coreui/utils/dist/coreui-utils.js', 'public/js');
 mix.copy('node_modules/axios/dist/axios.min.js', 'public/js');
+mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js');
+
 //mix.copy('node_modules/pace-progress/pace.min.js', 'public/js');
 mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js');
 // views scripts
