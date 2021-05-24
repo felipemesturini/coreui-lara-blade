@@ -19,7 +19,13 @@
                             </svg>
                           </span>
                         </div>
-                        <input class="form-control" type="text" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required autofocus>
+                        <input class="form-control{{ $errors->has('name') ? ' is-invalid' : ''}}"
+                               type="text" placeholder="{{ __('Name') }}"
+                               name="name" value="{{ old('name') }}"
+                               required autofocus>
+                        @if($errors->has('name'))
+                            <div class="invalid-feedback">{{ $errors->first('name') }}</div>
+                        @endif
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -29,7 +35,12 @@
                             </svg>
                           </span>
                         </div>
-                        <input class="form-control" type="text" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}" required>
+                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : ''}}"
+                               type="text" placeholder="{{ __('E-Mail Address') }}" name="email"
+                               value="{{ old('email') }}" required>
+                        @if($errors->has('email'))
+                            <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+                        @endif
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -39,7 +50,12 @@
                             </svg>
                           </span>
                         </div>
-                        <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
+                        <input class="form-control{{ $errors->has('password') ? ' is-invalid' : ''}}"
+                               type="password" placeholder="{{ __('Password') }}"
+                               name="password" required>
+                        @if($errors->has('password'))
+                            <div class="invalid-feedback">{{ $errors->first('password') }}</div>
+                        @endif
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
@@ -49,7 +65,12 @@
                             </svg>
                           </span>
                         </div>
-                        <input class="form-control" type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required>
+                        <input class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : ''}}"
+                               type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation"
+                               required>
+                        @if($errors->has('password_confirmation'))
+                            <div class="invalid-feedback">{{ $errors->first('password_confirmation') }}</div>
+                        @endif
                     </div>
                     <button class="btn btn-block btn-success" type="submit">{{ __('Register') }}</button>
                 </form>
