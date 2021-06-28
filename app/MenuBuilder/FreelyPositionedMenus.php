@@ -1,19 +1,15 @@
 <?php
-/*
-17.12.2019
-FreelyPositionedMenus,php
-*/
 
 namespace App\MenuBuilder;
 
 class FreelyPositionedMenus{
 
-    private static function renderDropdown($data, $prefixClass){
+    private function renderDropdown($data, $prefixClass){
         if(array_key_exists('slug', $data) && $data['slug'] === 'dropdown'){
             echo '<li class="' . $prefixClass . 'nav-item dropdown px-3">';
             echo '<a class="' . $prefixClass . 'nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">';
             if($data['hasIcon'] === true && $data['iconType'] === 'coreui'){
-                echo '<i class="' . $data['icon'] . ' ' . $prefixClass . 'nav-icon"></i>';    
+                echo '<i class="' . $data['icon'] . ' ' . $prefixClass . 'nav-icon"></i>';
             }
             echo $data['name'] . '</a>';
             echo '<div class="dropdown-menu">';
@@ -35,9 +31,9 @@ class FreelyPositionedMenus{
      * Render menu nav
      * @param  $data - array, result of GetSidebarMenu->get function
      * @param  $prefixClass - prefix to be placed before detailed classes
-     * @param  $navClass - class to be placed in nav 
+     * @param  $navClass - class to be placed in nav
      */
-    public static function render($data, $prefixClass = '', $navClass = ''){
+    public function render($data, $prefixClass = '', $navClass = ''){
         echo '<ul class="' . $prefixClass . 'nav ' . $navClass . '">';
         foreach($data as $d){
             if($d['slug'] === 'link'){
@@ -47,7 +43,7 @@ class FreelyPositionedMenus{
                     if($d['iconType'] === 'coreui'){
                         echo '<i class="' . $d['icon'] . ' ' . $prefixClass . 'nav-icon"></i>';
                     }
-                } 
+                }
                 echo $d['name'];
                 echo '</a>';
                 echo '</li>';
@@ -59,7 +55,7 @@ class FreelyPositionedMenus{
                     if($d['iconType'] === 'coreui'){
                         echo '<i class="' . $d['icon'] . ' ' . $prefixClass . 'nav-icon"></i>';
                     }
-                } 
+                }
                 echo $d['name'];
                 echo '</li>';
             }

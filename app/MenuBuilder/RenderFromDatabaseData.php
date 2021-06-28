@@ -6,8 +6,6 @@
 
 namespace App\MenuBuilder;
 
-use App\MenuBuilder\MenuBuilder;
-
 class RenderFromDatabaseData
 {
 

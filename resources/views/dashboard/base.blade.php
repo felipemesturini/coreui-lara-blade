@@ -33,43 +33,43 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 @yield('css')
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+{{--    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>--}}
+{{--    <script>--}}
+{{--        window.dataLayer = window.dataLayer || [];--}}
 
-<!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+{{--        function gtag() {--}}
+{{--            dataLayer.push(arguments);--}}
+{{--        }--}}
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        // Shared ID
-        gtag('config', 'UA-118965717-3');
-        // Bootstrap ID
-        gtag('config', 'UA-118965717-5');
-    </script>
+{{--        gtag('js', new Date());--}}
+{{--        // Shared ID--}}
+{{--        gtag('config', 'UA-118965717-3');--}}
+{{--        // Bootstrap ID--}}
+{{--        gtag('config', 'UA-118965717-5');--}}
+{{--    </script>--}}
 
     <link href="{{ asset('css/coreui-chartjs.css') }}" rel="stylesheet">
 </head>
 <body class="c-app">
-<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-
-    @include('dashboard.shared.nav-builder')
-    @include('dashboard.shared.header')
-
-    <div class="c-body">
-
-        <main class="c-main">
-            @yield('content')
-        </main>
-        @include('dashboard.shared.footer')
+    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+        @include('dashboard.shared.nav-builder')
     </div>
-</div>
+    <div class="c-wrapper">
+        @include('dashboard.shared.header')
+        <div class="c-body">
+            <main class="c-main">
+                @yield('content')
+            </main>
+            @include('dashboard.shared.footer')
+        </div>
+    </div>
 
-<!-- CoreUI and necessary plugins-->
-<script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
-<script src="{{ asset('js/coreui-utils.js') }}"></script>
-@yield('javascript')
+    <!-- CoreUI and necessary plugins-->
+    <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/coreui-utils.js') }}"></script>
+
+    @yield('javascript')
+
 </body>
 </html>

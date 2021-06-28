@@ -1,7 +1,4 @@
 <?php
-/*
-    $data = $menu['elements']
-*/
 
 if (!function_exists('renderDropdown')) {
     function renderDropdown($data)
@@ -31,7 +28,6 @@ if (!function_exists('renderDropdown')) {
 }
 ?>
 
-
 <div class="c-sidebar-brand">
     <img class="c-sidebar-brand-full" src="{{ asset('/assets/brand/coreui-base-white.svg') }}" width="118" height="46"
          alt="Empresa Logo">
@@ -40,7 +36,7 @@ if (!function_exists('renderDropdown')) {
 </div>
 
 <ul class="c-sidebar-nav">
-    @if(isset($side_menu))
+    @if($side_menu)
         @foreach($side_menu as $menu)
             @if($menu['slug'] === 'link')
                 <li class="c-sidebar-nav-item">
@@ -70,4 +66,4 @@ if (!function_exists('renderDropdown')) {
 </ul>
 <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
         data-class="c-sidebar-minimized"></button>
-</div>
+
